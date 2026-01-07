@@ -78,14 +78,15 @@ public class DoublyLinkedList {
 			return null;
 		}
 		Node temp = tail;
-		tail = tail.prev;
-		tail.next = null;
-		temp.prev = null;
-		length--;
-		if (length == 0) {
+		if (length == 1) {
 			head = null;
 			tail = null;
+		} else {
+			tail = tail.prev;
+			tail.next = null;
+			temp.prev = null;
 		}
+		length--;
 		return temp;
 	}
 
