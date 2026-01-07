@@ -59,10 +59,10 @@ public class DoublyLinkedList {
 	public void printLength() {
 		System.out.println("Length: " + length);
 	}
-	
+
 	public void append(int value) {
 		Node newNode = new Node(value);
-		if(length == 0) {
+		if (length == 0) {
 			head = newNode;
 			tail = newNode;
 		} else {
@@ -71,6 +71,22 @@ public class DoublyLinkedList {
 			tail = newNode;
 		}
 		length++;
+	}
+
+	public Node removeLast() {
+		if (length == 0) {
+			return null;
+		}
+		Node temp = tail;
+		tail = tail.prev;
+		tail.next = null;
+		temp.prev = null;
+		length--;
+		if (length == 0) {
+			head = null;
+			tail = null;
+		}
+		return temp;
 	}
 
 }

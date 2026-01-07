@@ -7,9 +7,12 @@ public class DoublyLinkedListApp {
 	public static void main(String[] args) {
 
 		DoublyLinkedList doublyLinkedList = new DoublyLinkedList(4);
-		doublyLinkedList.printHead();
-		doublyLinkedList.printTail();
-		doublyLinkedList.printLength();
+		doublyLinkedList.append(1);
+		doublyLinkedList.append(6);
+		doublyLinkedList.append(7);
+		doublyLinkedList.printList();
+		System.out.println();
+		doublyLinkedList.removeLast();
 		doublyLinkedList.printList();
 
 	}
