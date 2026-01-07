@@ -6,7 +6,7 @@ public class DoublyLinkedList {
 	private Node tail;
 	private int length;
 
-	class Node {
+	public class Node {
 		Node prev;
 		int value;
 		Node next;
@@ -25,11 +25,6 @@ public class DoublyLinkedList {
 
 		public Node getPrev() {
 			return prev;
-		}
-
-		@Override
-		public String toString() {
-			return "Node [prev=" + prev + ", value=" + value + ", next=" + next + "]";
 		}
 	}
 
@@ -118,6 +113,25 @@ public class DoublyLinkedList {
 		}
 		length--;
 		return temp;
+	}
+
+	public Node get(int index) {
+		if (index < 0 || index >= length) {
+			return null;
+		}
+		Node temp = head;
+		if (index < length / 2) {
+			for (int i = 0; i < index; i++) {
+				temp = temp.next;
+			}
+			return temp;
+		} else {
+			temp = tail;
+			for (int i = length - 1; i > index; i--) {
+				temp = temp.prev;
+			}
+			return temp;
+		}
 	}
 
 }

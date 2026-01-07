@@ -8,12 +8,11 @@ public class DoublyLinkedListApp {
 
 		DoublyLinkedList doublyLinkedList = new DoublyLinkedList(4);
 		doublyLinkedList.append(1);
-		doublyLinkedList.append(6);
+		doublyLinkedList.append(2);
 		doublyLinkedList.append(7);
 		doublyLinkedList.printList();
 		System.out.println();
-		doublyLinkedList.removeLast();
-		doublyLinkedList.printList();
+		System.out.println(doublyLinkedList.get(3).getValue());
 
 	}
 
