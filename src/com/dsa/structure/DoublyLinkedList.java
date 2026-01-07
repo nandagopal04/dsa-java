@@ -133,14 +133,62 @@ public class DoublyLinkedList {
 			return temp;
 		}
 	}
-	
+
 	public boolean set(int value, int index) {
 		Node temp = get(index);
-		if(temp == null) {
+		if (temp == null) {
 			return false;
 		}
 		temp.value = value;
 		return true;
+	}
+
+	public boolean insert(int value, int index) {
+		if (index < 0 || index > length) {
+			return false;
+		}
+		if (index == 0) {
+			prepend(value);
+			return true;
+		}
+		if (index == length) {
+			append(value);
+			return true;
+		}
+		Node newNode = new Node(value);
+		Node after = get(index);
+		Node before = after.prev;
+		before.next = newNode;
+		newNode.prev = before;
+		after.prev = newNode;
+		newNode.next = after;
+		length++;
+		return true;
+	}
+
+	public Node remove(int index) {
+		if (index < 0 || index >= length) {
+			return null;
+		}
+		if (index == 0) {
+			return removeFirst();
+		}
+		if (index == length - 1) {
+			return removeLast();
+		}
+		Node temp = get(index);
+		temp.prev.next = temp.next;
+		temp.next.prev = temp.prev;
+		temp.prev = null;
+		temp.next = null;
+//		Node before = temp.prev;
+//		Node after = temp.next;
+//		temp.prev = null;
+//		temp.next = null;
+//		before.next = after;
+//		after.prev = before;
+		length--;
+		return temp;
 	}
 
 }
