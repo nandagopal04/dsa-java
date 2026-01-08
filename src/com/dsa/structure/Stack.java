@@ -3,7 +3,7 @@ package com.dsa.structure;
 public class Stack {
 
 	private Node top;
-	private int length;
+	private int height;
 
 	public class Node {
 		int value;
@@ -21,7 +21,7 @@ public class Stack {
 	public Stack(int value) {
 		Node newNode = new Node(value);
 		top = newNode;
-		length = 1;
+		height = 1;
 	}
 
 	public void printStack() {
@@ -32,16 +32,27 @@ public class Stack {
 		}
 	}
 
-	public void printLength() {
-		System.out.println("Length: " + length);
+	public void printHeight() {
+		System.out.println("Height: " + height);
 	}
 
 	public void printTop() {
-		if (length > 0) {
+		if (height > 0) {
 			System.out.println("Top: " + top.value);
 		} else {
 			System.out.println("Stack is empty!");
 		}
+	}
+
+	public void push(int value) {
+		Node newNode = new Node(value);
+		if (height == 0) {
+			top = newNode;
+		} else {
+			newNode.next = top;
+			top = newNode;
+		}
+		height++;
 	}
 
 }

@@ -7,10 +7,15 @@ public class StackApp {
 	public static void main(String[] args) {
 
 		Stack stack = new Stack(3);
-		
-		stack.printLength();
-		
+		stack.printTop();
 		stack.printStack();
+		System.out.println();
+
+		stack.push(4);
+		stack.push(5);
+
+		stack.printStack();
+		stack.printTop();
 
 	}
 
