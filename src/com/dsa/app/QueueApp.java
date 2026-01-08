@@ -11,6 +11,16 @@ public class QueueApp {
 		queue.printLast();
 		queue.printQueue();
 		queue.enqueue(11);
+		queue.enqueue(12);
+		queue.enqueue(13);
+		System.out.println();
+		queue.printQueue();
+		queue.printFirst();
+		queue.printLast();
+		queue.printLast();
+		queue.printQueue();
+		
+		queue.dequeue();
 		System.out.println();
 		queue.printQueue();
 		queue.printFirst();
