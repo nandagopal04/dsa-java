@@ -17,6 +17,10 @@ public class StackApp {
 		stack.printStack();
 		stack.printTop();
 
+		System.out.println();
+		System.out.println(stack.pop().getValue());
+		stack.printTop();
+
 	}
 
 }
