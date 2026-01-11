@@ -12,6 +12,8 @@ public class BinarySearchTreeApp {
 		binarySearchTree.insert(10);
 		binarySearchTree.insert(11);
 		binarySearchTree.insert(12);
+		System.out.println(binarySearchTree.getRoot().right.value);
+		System.out.println(binarySearchTree.contains(11));
 
 	}
 

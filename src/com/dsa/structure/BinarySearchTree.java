@@ -31,18 +31,33 @@ public class BinarySearchTree {
 			}
 			if (newNode.value < temp.value) {
 				if (temp.left == null) {
-					temp = newNode;
+					temp.left = newNode;
 					return true;
 				}
 				temp = temp.left;
 			} else {
 				if (temp.right == null) {
-					temp = newNode;
+					temp.right = newNode;
 					return true;
 				}
 				temp = temp.right;
 			}
 		}
+	}
+	
+	public boolean contains(int value) {
+		Node temp = root;
+		while(temp != null) {
+			if(value < temp.value) {
+				temp = temp.left;
+			}else if(value > temp.value) {
+				temp = temp.right;
+			}else {
+				return true;
+			}
+		}
+		return false;
+		
 	}
 
 }
