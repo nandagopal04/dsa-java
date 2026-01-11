@@ -8,6 +8,10 @@ public class BinarySearchTreeApp {
 
 		BinarySearchTree binarySearchTree = new BinarySearchTree();
 		System.out.println("Root: " + binarySearchTree.getRoot());
+		
+		binarySearchTree.insert(10);
+		binarySearchTree.insert(11);
+		binarySearchTree.insert(12);
 
 	}
 
