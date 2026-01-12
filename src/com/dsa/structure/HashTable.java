@@ -31,4 +31,31 @@ public class HashTable {
 		}
 	}
 
+	/**
+	 * @param key
+	 * @return a random hash value generated between 0-6
+	 */
+	private int hash(String key) {
+		int hash = 0;
+		char[] charArray = key.toCharArray();
+		for (int i = 0; i < charArray.length; i++) {
+			int asciiValue = charArray[i];
+
+			/*
+			 * number 23 is a prime number used to generate a random number.
+			 * 
+			 * Instead of 23 we can use any other prime number.
+			 * 
+			 * We can replace (hash + asciiValue * 23) with any other logic to generate a
+			 * random number.
+			 * 
+			 * By doing modular division with dataMap.length which is 7 we always get a
+			 * number between 0-6
+			 * 
+			 */
+			hash = (hash + asciiValue * 23) % dataMap.length;
+		}
+		return hash;
+	}
+
 }
