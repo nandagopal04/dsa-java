@@ -14,6 +14,8 @@ public class HashTableApp {
 		System.out.println();
 		hashTable.printHashTable();
 		System.out.println("Mangos: " + hashTable.get("Mangos"));
+		System.out.println("\n \n");
+		System.out.println(hashTable.keys());
 	}
 
 }
