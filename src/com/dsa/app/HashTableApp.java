@@ -13,7 +13,7 @@ public class HashTableApp {
 		hashTable.set("Grapes", 30);
 		System.out.println();
 		hashTable.printHashTable();
-
+		System.out.println("Mangos: " + hashTable.get("Mangos"));
 	}
 
 }
