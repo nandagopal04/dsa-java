@@ -8,6 +8,11 @@ public class HashTableApp {
 
 		HashTable hashTable = new HashTable();
 		hashTable.printHashTable();
+		hashTable.set("Mangos", 10);
+		hashTable.set("Apples", 20);
+		hashTable.set("Grapes", 30);
+		System.out.println();
+		hashTable.printHashTable();
 
 	}
 
