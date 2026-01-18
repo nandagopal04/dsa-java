@@ -13,7 +13,12 @@ public class GraphApp {
 		System.out.println(graph.addEdge("guntur", "vijayawada"));
 		System.out.println(graph.addEdge("ponnur", "vijayawada"));
 		graph.printGraph();
-		System.out.println(graph.removeEdje("ponnur", "vijayawada"));
+		System.out.println(graph.removeEdge("ponnur", "vijayawada"));
+		graph.printGraph();
+
+		System.out.println(graph.removeVertex("guntur"));
+		graph.printGraph();
+		System.out.println(graph.addEdge("ponnur", "vijayawada"));
 		graph.printGraph();
 	}
 

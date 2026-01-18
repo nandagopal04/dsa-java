@@ -10,13 +10,12 @@ public class Graph {
 	private Map<String, List<String>> adjList;
 
 	public Graph() {
-		super();
 		this.adjList = new HashMap<>();
 	}
 
 	public boolean addVertex(String vertex) {
 		if (!adjList.containsKey(vertex)) {
-			adjList.put(vertex, new ArrayList<String>());
+			adjList.put(vertex, new ArrayList<>());
 			return true;
 		}
 		return false;
@@ -34,10 +33,22 @@ public class Graph {
 		return false;
 	}
 
-	public boolean removeEdje(String vertex1, String vetex2) {
-		if (adjList.containsKey(vertex1) && adjList.containsKey(vetex2)) {
-			adjList.get(vertex1).remove(vetex2);
-			adjList.get(vetex2).remove(vertex1);
+	public boolean removeEdge(String vertex1, String vertex2) {
+		if (!adjList.containsKey(vertex1) || !adjList.containsKey(vertex2)) {
+			return false;
+		}
+		if (adjList.containsKey(vertex1) && adjList.containsKey(vertex2)) {
+			adjList.get(vertex1).remove(vertex2);
+			adjList.get(vertex2).remove(vertex1);
+			return true;
+		}
+		return false;
+	}
+
+	public boolean removeVertex(String vertex) {
+		if (adjList.containsKey(vertex)) {
+			adjList.get(vertex).forEach(edge -> adjList.get(edge).remove(vertex));
+			adjList.remove(vertex);
 			return true;
 		}
 		return false;
