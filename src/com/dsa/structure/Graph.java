@@ -34,6 +34,15 @@ public class Graph {
 		return false;
 	}
 
+	public boolean removeEdje(String vertex1, String vetex2) {
+		if (adjList.containsKey(vertex1) && adjList.containsKey(vetex2)) {
+			adjList.get(vertex1).remove(vetex2);
+			adjList.get(vetex2).remove(vertex1);
+			return true;
+		}
+		return false;
+	}
+
 	public void printGraph() {
 		System.out.println(adjList);
 	}

@@ -8,8 +8,12 @@ public class GraphApp {
 		Graph graph = new Graph();
 		System.out.println(graph.addVertex("guntur"));
 		System.out.println(graph.addVertex("ponnur"));
+		System.out.println(graph.addVertex("vijayawada"));
 		System.out.println(graph.addEdge("guntur", "ponnur"));
-		System.out.println(graph.addEdge("guntur", "guntur"));
+		System.out.println(graph.addEdge("guntur", "vijayawada"));
+		System.out.println(graph.addEdge("ponnur", "vijayawada"));
+		graph.printGraph();
+		System.out.println(graph.removeEdje("ponnur", "vijayawada"));
 		graph.printGraph();
 	}
 
