@@ -11,12 +11,24 @@ public class Graph {
 
 	public Graph() {
 		super();
-		this.adjList = new HashMap<String, List<String>>();
+		this.adjList = new HashMap<>();
 	}
 
 	public boolean addVertex(String vertex) {
 		if (!adjList.containsKey(vertex)) {
 			adjList.put(vertex, new ArrayList<String>());
+			return true;
+		}
+		return false;
+	}
+
+	public boolean addEdge(String vertex1, String vertex2) {
+		if (vertex1.equals(vertex2)) {
+			return false;
+		}
+		if (adjList.containsKey(vertex1) && adjList.containsKey(vertex2) && !adjList.get(vertex1).contains(vertex2)) {
+			adjList.get(vertex1).add(vertex2);
+			adjList.get(vertex2).add(vertex1);
 			return true;
 		}
 		return false;
