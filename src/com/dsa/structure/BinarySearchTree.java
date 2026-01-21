@@ -46,19 +46,21 @@ public class BinarySearchTree {
 	}
 
 	public boolean contains(int value) {
-//		Node temp = root;
-//		while (temp != null) {
-//			if (value < temp.value) {
-//				temp = temp.left;
-//			} else if (value > temp.value) {
-//				temp = temp.right;
-//			} else {
-//				return true;
-//			}
-//		}
-//		return false;
-		return rContains(root, value);
+		Node temp = root;
+		while (temp != null) {
+			if (value < temp.value) {
+				temp = temp.left;
+			} else if (value > temp.value) {
+				temp = temp.right;
+			} else {
+				return true;
+			}
+		}
+		return false;
+	}
 
+	public boolean rContains(int value) {
+		return rContains(root, value);
 	}
 
 	private boolean rContains(Node currentNode, int value) {
