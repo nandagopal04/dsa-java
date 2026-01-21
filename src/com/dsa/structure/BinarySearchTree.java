@@ -44,20 +44,33 @@ public class BinarySearchTree {
 			}
 		}
 	}
-	
+
 	public boolean contains(int value) {
-		Node temp = root;
-		while(temp != null) {
-			if(value < temp.value) {
-				temp = temp.left;
-			}else if(value > temp.value) {
-				temp = temp.right;
-			}else {
-				return true;
-			}
+//		Node temp = root;
+//		while (temp != null) {
+//			if (value < temp.value) {
+//				temp = temp.left;
+//			} else if (value > temp.value) {
+//				temp = temp.right;
+//			} else {
+//				return true;
+//			}
+//		}
+//		return false;
+		return rContains(root, value);
+
+	}
+
+	private boolean rContains(Node currentNode, int value) {
+		if (currentNode == null)
+			return false;
+		if (currentNode.value == value)
+			return true;
+		if (value < currentNode.value) {
+			return rContains(currentNode.left, value);
+		} else {
+			return rContains(currentNode.right, value);
 		}
-		return false;
-		
 	}
 
 }
