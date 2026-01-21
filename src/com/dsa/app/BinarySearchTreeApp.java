@@ -9,9 +9,9 @@ public class BinarySearchTreeApp {
 		BinarySearchTree binarySearchTree = new BinarySearchTree();
 		System.out.println("Root: " + binarySearchTree.getRoot());
 
-		binarySearchTree.insert(10);
-		binarySearchTree.insert(11);
-		binarySearchTree.insert(12);
+		binarySearchTree.rInsert(10);
+		binarySearchTree.rInsert(11);
+		binarySearchTree.rInsert(12);
 		System.out.println(binarySearchTree.getRoot().right.value);
 		System.out.println(binarySearchTree.contains(11));
 		System.out.println(binarySearchTree.rContains(11));
