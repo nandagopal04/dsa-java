@@ -1,4 +1,4 @@
-package com.dsa.problems.sort;
+package com.dsa.algorithm.sort;
 
 public class BubbleSort {
 
