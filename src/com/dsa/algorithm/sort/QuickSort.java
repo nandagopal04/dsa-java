@@ -8,16 +8,20 @@ public class QuickSort {
 
 		int[] array = { 4, 6, 1, 7, 3, 2, 5 };
 		System.out.println("Before Sort: \n" + Arrays.toString(array));
-		quickSort(array, 0, array.length - 1);
+		quickSort(array);
 		System.out.println("After Sort: \n" + Arrays.toString(array));
 
 	}
 
-	private static void quickSort(int[] array, int left, int right) {
+	private static void quickSort(int[] array) {
+		quickSortHelper(array, 0, array.length - 1);
+	}
+
+	private static void quickSortHelper(int[] array, int left, int right) {
 		if (left < right) {
 			int pivoteIndex = pivote(array, left, right);
-			quickSort(array, left, pivoteIndex - 1);
-			quickSort(array, pivoteIndex + 1, right);
+			quickSortHelper(array, left, pivoteIndex - 1);
+			quickSortHelper(array, pivoteIndex + 1, right);
 		}
 
 	}
