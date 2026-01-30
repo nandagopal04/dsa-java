@@ -1,5 +1,6 @@
 package com.dsa.app;
 
+import com.dsa.constants.DfsOrder;
 import com.dsa.structure.BinarySearchTree;
 
 public class BinarySearchTreeApp {
@@ -20,9 +21,11 @@ public class BinarySearchTreeApp {
 		System.out.println("BFS:");
 		System.out.println(binarySearchTree.bfs());
 		System.out.println("DFS(Pre Order):");
-		System.out.println(binarySearchTree.preOrder());
+		System.out.println(binarySearchTree.dfs(DfsOrder.PRE_ORDER));
 		System.out.println("DFS(Post Order):");
-		System.out.println(binarySearchTree.postOrder());
+		System.out.println(binarySearchTree.dfs(DfsOrder.POST_ORDER));
+		System.out.println("DFS(In Order):");
+		System.out.println(binarySearchTree.dfs(DfsOrder.IN_ORDER));
 
 	}
 

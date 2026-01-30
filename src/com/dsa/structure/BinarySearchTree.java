@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import com.dsa.constants.DfsOrder;
+
 public class BinarySearchTree {
 
 	private Node root;
@@ -167,37 +169,64 @@ public class BinarySearchTree {
 //		return result;
 //	}
 
-	public List<Integer> preOrder() {
-		List<Integer> result = new ArrayList<>();
-		preOrder(result, root);
-		return result;
-	}
-	
-	public void preOrder(List<Integer> list, Node currentNode) {
-		list.add(currentNode.value);
-		if (currentNode.left != null) {
-			preOrder(list, currentNode.left);
+	public List<Integer> dfs(DfsOrder order) {
+
+		if (order == null) {
+			throw new IllegalArgumentException("Order can not be null");
 		}
-		if (currentNode.right != null) {
-			preOrder(list, currentNode.right);
-		}
-	}
-	
-	public List<Integer> postOrder(){
+
 		List<Integer> result = new ArrayList<>();
-		postOrder(root, result);
+		switch (order) {
+		case PRE_ORDER:
+			preOrder(root, result);
+			break;
+		case POST_ORDER:
+			postOrder(root, result);
+			break;
+		case IN_ORDER:
+			inOrder(root, result);
+			break;
+		}
 		return result;
 	}
 
+	private void preOrder(Node currentNode, List<Integer> list) {
+		if (currentNode == null)
+			return;
+
+		list.add(currentNode.value);
+		if (currentNode.left != null) {
+			preOrder(currentNode.left, list);
+		}
+		if (currentNode.right != null) {
+			preOrder(currentNode.right, list);
+		}
+	}
+
 	private void postOrder(Node currentNode, List<Integer> result) {
-		if(currentNode.left != null) {
+		if (currentNode == null)
+			return;
+
+		if (currentNode.left != null) {
 			postOrder(currentNode.left, result);
 		}
-		if(currentNode.right != null) {
+		if (currentNode.right != null) {
 			postOrder(currentNode.right, result);
 		}
 		result.add(currentNode.value);
 	}
-	
+
+	private void inOrder(Node currentNode, List<Integer> result) {
+		if (currentNode == null)
+			return;
+
+		if (currentNode.left != null) {
+			inOrder(currentNode.left, result);
+		}
+		result.add(currentNode.value);
+		if (currentNode.right != null) {
+			inOrder(currentNode.right, result);
+		}
+	}
 
 }
