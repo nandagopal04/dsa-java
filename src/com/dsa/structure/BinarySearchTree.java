@@ -182,5 +182,22 @@ public class BinarySearchTree {
 			preOrder(list, currentNode.right);
 		}
 	}
+	
+	public List<Integer> postOrder(){
+		List<Integer> result = new ArrayList<>();
+		postOrder(root, result);
+		return result;
+	}
+
+	private void postOrder(Node currentNode, List<Integer> result) {
+		if(currentNode.left != null) {
+			postOrder(currentNode.left, result);
+		}
+		if(currentNode.right != null) {
+			postOrder(currentNode.right, result);
+		}
+		result.add(currentNode.value);
+	}
+	
 
 }

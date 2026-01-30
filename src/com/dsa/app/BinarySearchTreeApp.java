@@ -21,6 +21,8 @@ public class BinarySearchTreeApp {
 		System.out.println(binarySearchTree.bfs());
 		System.out.println("DFS(Pre Order):");
 		System.out.println(binarySearchTree.preOrder());
+		System.out.println("DFS(Post Order):");
+		System.out.println(binarySearchTree.postOrder());
 
 	}
 
