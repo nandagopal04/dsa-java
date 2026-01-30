@@ -1,5 +1,10 @@
 package com.dsa.structure;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
 	private Node root;
@@ -125,6 +130,24 @@ public class BinarySearchTree {
 			currentNode = currentNode.left;
 		}
 		return currentNode.value;
+	}
+
+	public List<Integer> bfs() {
+		Node currentNode = root;
+		Queue<Node> queue = new LinkedList<>();
+		List<Integer> values = new ArrayList<>();
+		queue.add(currentNode);
+		while (queue.size() > 0) {
+			currentNode = queue.remove();
+			values.add(currentNode.value);
+			if (currentNode.left != null) {
+				queue.add(currentNode.left);
+			}
+			if (currentNode.right != null) {
+				queue.add(currentNode.right);
+			}
+		}
+		return values;
 	}
 
 }

@@ -9,12 +9,15 @@ public class BinarySearchTreeApp {
 		BinarySearchTree binarySearchTree = new BinarySearchTree();
 		System.out.println("Root: " + binarySearchTree.getRoot());
 
-		binarySearchTree.rInsert(10);
-		binarySearchTree.rInsert(11);
-		binarySearchTree.rInsert(12);
-		System.out.println(binarySearchTree.getRoot().right.value);
-		System.out.println(binarySearchTree.contains(11));
-		System.out.println(binarySearchTree.rContains(11));
+		binarySearchTree.rInsert(47);
+		binarySearchTree.rInsert(21);
+		binarySearchTree.rInsert(76);
+		binarySearchTree.rInsert(18);
+		binarySearchTree.rInsert(27);
+		binarySearchTree.rInsert(52);
+		binarySearchTree.rInsert(82);
+
+		System.out.println(binarySearchTree.bfs());
 
 	}
 
