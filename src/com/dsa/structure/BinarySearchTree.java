@@ -150,4 +150,37 @@ public class BinarySearchTree {
 		return values;
 	}
 
+//	public List<Integer> preOrder() {
+//		List<Integer> result = new ArrayList<>();
+//		class Traverse {
+//			public Traverse(Node currentNode) {
+//				result.add(currentNode.value);
+//				if (currentNode.left != null) {
+//					new Traverse(currentNode.left);
+//				}
+//				if (currentNode.right != null) {
+//					new Traverse(currentNode.right);
+//				}
+//			}
+//		}
+//		new Traverse(root);
+//		return result;
+//	}
+
+	public List<Integer> preOrder() {
+		List<Integer> result = new ArrayList<>();
+		preOrder(result, root);
+		return result;
+	}
+	
+	public void preOrder(List<Integer> list, Node currentNode) {
+		list.add(currentNode.value);
+		if (currentNode.left != null) {
+			preOrder(list, currentNode.left);
+		}
+		if (currentNode.right != null) {
+			preOrder(list, currentNode.right);
+		}
+	}
+
 }

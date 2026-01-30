@@ -17,7 +17,10 @@ public class BinarySearchTreeApp {
 		binarySearchTree.rInsert(52);
 		binarySearchTree.rInsert(82);
 
+		System.out.println("BFS:");
 		System.out.println(binarySearchTree.bfs());
+		System.out.println("DFS(Pre Order):");
+		System.out.println(binarySearchTree.preOrder());
 
 	}
 
